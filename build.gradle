@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.intellij' version '0.7.3'
+}
+
+version '0.1.2'
+
+repositories {
+    mavenCentral()
+}
+
+intellij {
+    version = '2021.3'
+    updateSinceUntilBuild = false
+}
+
+publishPlugin {
+    token = System.getenv("ORG_GRADLE_PROJECT_intellijPublishToken")
+}

@@ -1,0 +1,43 @@
+<idea-plugin>
+    <id>net.jakubpas.converter</id>
+    <name>6502 assembler number converter</name>
+    <version>1.1.0</version>
+    <vendor email="goto_jakubpas@github.com">Jakub Pas</vendor>
+    <description><![CDATA[
+		A number system is a format to represent numbers in a certain way. This plugin is for converting one numbers
+		 system to another. It is designed to work with 6502 assembler plugin, so it supports "$" and "%" prefixes of
+		 MADS and QA. <br>
+		<br>
+		Current supported number systems:
+		<ul>
+			<li>Decimal</li>
+			<li>Hexadecimal</li>
+			<li>Binary</li>
+		</ul>
+		]]>
+    </description>
+    <change-notes><![CDATA[
+		<ul>
+			<li>1.1.0 - Added support for MADS assembler "$" & "%" prefixes/li>
+			<li>1.0.0 - Added HEX, DEC & BIN</li>
+		</ul>
+		]]>
+    </change-notes>
+    <!-- Go to https://plugins.jetbrains.com/docs/intellij/welcome.html for plugin SDK documentation -->
+    <idea-version since-build="191.0"/>
+    <depends>com.intellij.modules.platform</depends>
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+    <actions>
+        <group
+                id="NumberConverter.Group"
+                class="net.jakubpas.converter.ConvertActionGroup"
+                popup="true"
+                text="Convert to..."
+                description="Convert to different number system"
+                icon="/menu_icon.png">
+            <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="EditorToggleColumnMode"/>
+        </group>
+    </actions>
+</idea-plugin>
